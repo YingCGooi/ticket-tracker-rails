@@ -1,0 +1,13 @@
+<%= render 'shared/errors', obj: @project %>
+
+<%= form_for @project do |f| %>
+  <dd>
+    <dt><%= f.label :name %></dt>
+    <dd><%= f.text_field :name %></dd>
+  </dd>
+  <dd>
+    <dt><%= f.label :description %></dt>
+    <dd><%= f.text_area :description, rows: 5 %></dd>
+  </dd>
+  <%= f.submit %>
+<% end %>
