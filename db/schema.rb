@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_06_043539) do
+ActiveRecord::Schema.define(version: 2018_08_06_050526) do
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 2018_08_06_043539) do
 
   create_table "tags", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "ticket_tags", force: :cascade do |t|
+    t.integer "ticket_id"
+    t.integer "tag_id"
+    t.index ["tag_id"], name: "index_ticket_tags_on_tag_id"
+    t.index ["ticket_id"], name: "index_ticket_tags_on_ticket_id"
   end
 
   create_table "tickets", force: :cascade do |t|
