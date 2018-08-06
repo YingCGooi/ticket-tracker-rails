@@ -1,0 +1,18 @@
+<h1><%= @project.name %></h1>
+
+<h2>Tickets</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Assignee</th>
+      <th>Status</th>
+      <th>Tags</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @tickets %>
+  </tbody>
+</table>
