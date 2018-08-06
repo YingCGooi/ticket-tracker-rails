@@ -1,0 +1,53 @@
+form label {
+  font-size: 20px;
+}
+
+form dt {
+  margin: 10px 0;
+}
+
+form dd {
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  padding: 8px;  
+  font-size: 16px;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #CCC;
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type=submit] {
+  padding: 10px;
+  font-weight: bold;
+  color: #FFF;  
+  background-color: #12449C;
+  border: none;
+}
+
+[type=submit]:hover {
+  cursor: pointer;
+  background-color: #1C53B5;
+}
+
+.alert {
+  color: #3F0023;
+  border: none; 
+  background-color: #FFC5C2;
+}
+
+.alert > h5 {
+  margin-bottom: 5px;
+}
+
+.alert li {
+  margin-left: 18px;
+  list-style: disc;
+  line-height: 20px;
+}
