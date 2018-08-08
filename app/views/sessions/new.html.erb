@@ -1,2 +1,17 @@
 <h1>Log In</h1>
 <hr/>
+
+<section class="well">
+  <%= form_tag login_path, method: :post do %>
+    <dl>
+      <dt><%= label_tag 'name', 'Username' %></dt>
+      <dd><%= text_field_tag 'name' %></dd>
+
+      <dt><%= label_tag 'password' %></dt>
+      <dd><%= password_field_tag 'password' %></dd>
+    </dl>
+
+    <hr/>
+    <%= button_tag 'Sign In' %>
+  <% end %>  
+</section>

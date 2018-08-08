@@ -75,10 +75,16 @@ main section {
   border-radius: 5px;  
 }
 
-.success {
+.success,
+.error {
   padding: 10px 30px;
-  color: #2F5833;
+  color: #2F5833;  
   background-color: #CBFFD0;
+}
+
+.error {
+  color: #3F0023;
+  background-color: #FFC5C2;
 }
 
 em {
