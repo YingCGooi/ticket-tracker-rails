@@ -1,31 +1,36 @@
-<h1>
-  <%= @project.name %><span></span>
-  <%= link_to edit_project_path(@project) do %>
-    <%= image_tag('edit-icon') %>
-  <% end %>
-  <%= link_to project_path(@project), method: :delete do %>
-    <%= image_tag('trash-icon') %>
-  <% end %>  
-</h1>
+<header>
+  <h1><%= @project.name %></h1>
+    <%= link_to 'Edit', edit_project_path(@project) %>
+    <span></span>
+    <%= link_to 'Delete', project_path(@project), method: :delete %>
+</header>
 <p>
   <%= @project.description %>
 </p>
 
 <section class="well">
-  <h2>Tickets</h2>
+  <% if @tickets.present? %>
+    <h2>Tickets</h2>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Assignee</th>
-        <th>Status</th>
-        <th>Tags</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @tickets %>
-    </tbody>
-  </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Assignee</th>
+          <th>Status</th>
+          <th>Tags</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @tickets %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>
+      <em>There are no associated tickets to display. 
+      Please
+      <%= link_to 'create one here', new_ticket_path(project_id: @project.id) %>.</em>
+  </p>
+  <% end %>
 </section>

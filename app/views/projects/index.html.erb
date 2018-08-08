@@ -1,17 +1,20 @@
-<h1>Projects</h1>
+<header>
+  <h1>Projects</h1>
+  <%= link_to '+ New Project', new_project_path %>
+</header>
 
-<%= link_to '+ New Project', new_project_path %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Open Tickets</th>
-      <th>Total Tickets</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render @projects %>
-  </tbody>
-</table>
+<section class="well">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Open Tickets</th>
+        <th>Total Tickets</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @projects %>
+    </tbody>
+  </table>
+</section>  
 

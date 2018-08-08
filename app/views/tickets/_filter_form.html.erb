@@ -1,0 +1,33 @@
+<section class="well">
+  <h2>Filter by:</h2>
+  <%= form_tag tickets_path, method: :get, enforce_utf8: false, class: "filter" do %>
+    <dl>
+      <dt><%= label_tag 'project' %></dt>
+      <dd>
+        <%= select_tag 'project',
+        options_from_collection_for_select(Project.all,
+        'id', 'name', @project_id), 
+        include_blank: "All Projects"%>            
+      </dd>
+    </dl><!--
+
+    --><dl>
+      <dt><%= label_tag 'status' %></dt>
+      <dd><%= select_tag 'status',
+        options_for_select(@statuses, @status),
+        include_blank: "All Statuses"
+      %></dd>
+    </dl><!--
+
+    --><dl>
+      <dt><%= label_tag 'tagged' %></dt>
+      <dd><%= select_tag 'tagged',
+        options_for_select([]),
+        include_blank: "Any/None"
+      %></dd>
+    </dl>
+
+    <%= button_tag 'Update' %>
+    <%= link_to 'Clear Filters', tickets_path, class: "center" %>
+  <% end %>
+</section>

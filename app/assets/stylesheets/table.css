@@ -1,5 +1,4 @@
 table {
-  margin-top: 20px;
   font-size: 20px;
   width: 100%;
 }
@@ -9,7 +8,7 @@ tbody tr:hover {
 }
 
 th {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   padding: 10px 0;
 }
@@ -25,13 +24,39 @@ td:not(:first-child) {
 }
 
 td {
-  padding: 10px 0;
+  padding: 10px 5px;
   border-top: 1px solid #DDD;
   vertical-align: middle;
+}
+
+td:last-child {
+  width: 70px;
 }
 
 td dd {
   margin-top: 8px;
   font-size: 16px;
   font-weight: 300;
+}
+
+td.tags {
+  font-weight: 300;
+}
+
+td a {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.info {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.info dt {
+  font-weight: bold;
+}
+
+.info dd {
+  margin: 10px 0;
 }

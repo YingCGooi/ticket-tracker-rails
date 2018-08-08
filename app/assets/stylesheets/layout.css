@@ -8,8 +8,6 @@ body {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
   padding: 30px;
   background: #EEE;
 }
@@ -22,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: #2E72E9;
+  color: #2F7AFF;
 }
 
 a > img {
@@ -32,16 +30,22 @@ a > img {
 }
 
 a > img:hover {
-  opacity: 0.6;
+  opacity: 0.8;
+}
+
+nav a {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 h1 {
-  margin-bottom: 16px;
+  flex: 1;
   font-weight: bold;
   font-size: 32px;
 }
 
-h1 span {
+span {
   display: inline-block;
   width: 10px;
 }
@@ -51,11 +55,8 @@ h2 {
   font-size: 24px;
 }
 
-nav {
-}
-
 main {
-  padding: 30px;
+  padding: 25px;
 }
 
 main p {
@@ -68,7 +69,7 @@ main section {
 }
 
 .well {
-  padding: 16px;
+  padding: 25px;
   background-color: #FAFAFA;
   border: 1px solid #CCC;
   border-radius: 5px;  
@@ -78,4 +79,44 @@ main section {
   padding: 10px 30px;
   color: #2F5833;
   background-color: #CBFFD0;
+}
+
+em {
+  font-style: italic;
+  font-size: 18px;
+}
+
+p {
+  font-size: 20px;
+}
+
+small {
+  font-size: 14px;
+}
+
+main > header {
+  background: none;
+  padding: 0;
+  align-items: center;
+}
+
+hr {
+  display: block;
+  margin: 20px 0;
+  border: 0.5px solid #DDD;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.no-background {
+  background: none;
+}
+
+header,
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

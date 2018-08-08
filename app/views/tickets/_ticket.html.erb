@@ -1,6 +1,14 @@
 <tr>
-  <td><%= ticket.name %></td>
+  <td><%= link_to ticket.name, ticket_path(ticket) %></td>
   <td>[assignee]</td>
-  <td><%= ticket.status %></td>
-  <td> [tags] </td>
+  <td><%= ticket.status.titleize %></td>
+  <td class="tags"><%= tag_names(ticket) %> </td>
+  <td>
+    <%= link_to edit_ticket_path(ticket) do %>
+      <%= image_tag('edit-icon') %>
+    <% end %>
+    <%= link_to ticket_path(ticket), method: :delete do %>
+      <%= image_tag('trash-icon') %>
+    <% end %>  
+  </td>
 </tr>

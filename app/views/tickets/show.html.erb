@@ -1,0 +1,40 @@
+<article class="well no-background">
+  <div class="flex">
+    <h1><%= @ticket.name %></h1>
+    <%= link_to 'Edit', edit_ticket_path(@ticket) %>
+    <span></span>
+    <%= link_to 'Delete', ticket_path(@ticket), method: :delete %>    
+  </div>
+  <hr/>  
+  <p><%= @ticket.body %></p>
+  <% if @ticket.tags.present? %>    
+    <small><strong>Tags: </strong><%= tag_names(@ticket) %></small>
+  <% end %>
+  <hr/>
+  <section class="flex info">
+    <dl>
+      <dt>Status</dt>
+      <dd><%= @ticket.status.titleize %></dd>
+    </dl>
+
+    <dl>
+      <dt>Creator</dt>
+      <dd>[user]</dd>
+    </dl>
+
+    <dl>
+      <dt>Assignee</dt>
+      <dd>[user]</dd>
+    </dl>
+  </section>
+</article>
+
+<br/>
+
+<article class="well">
+  <h2>Comments</h2>
+
+  <p>Comment body</p>
+</article>
+
+<% render 'comments/form', comment: @comment %>

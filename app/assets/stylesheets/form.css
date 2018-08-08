@@ -11,7 +11,9 @@ form dd {
 }
 
 input,
-textarea {
+textarea,
+select,
+button {
   padding: 8px;  
   font-size: 16px;
   width: 100%;
@@ -23,7 +25,8 @@ textarea {
   resize: vertical;
 }
 
-[type=submit] {
+[type=submit],
+h1 + a {
   padding: 10px;
   font-weight: bold;
   color: #FFF;  
@@ -31,7 +34,9 @@ textarea {
   border: none;
 }
 
-[type=submit]:hover {
+[type=submit]:hover,
+h1 + a:hover {
+  color: #FFF;
   cursor: pointer;
   background-color: #1C53B5;
 }
@@ -50,4 +55,47 @@ textarea {
   margin-left: 18px;
   list-style: disc;
   line-height: 20px;
+}
+
+.filter {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.filter dl {
+  padding: 0 5px;
+  display: inline-block;
+  width: 33%;
+}
+
+select {
+  background-color: #FFF;
+}
+
+.center,
+.center > p {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.width-1-3 {
+  width: 33%;
+}
+
+form li {
+  line-height: 30px;
+}
+
+[type=checkbox] {
+  width: auto;
+}
+
+fieldset ul {
+  padding: 10px 0 20px 0;
+}
+
+fieldset h3 {
+  font-size: 20px;
+  font-weight: bold;
 }
