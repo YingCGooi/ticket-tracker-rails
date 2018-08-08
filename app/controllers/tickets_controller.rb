@@ -15,7 +15,7 @@ class TicketsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
+    # @comment = Comment.new
   end
 
   def create

@@ -5,7 +5,13 @@
   <%= link_to 'Tags' %>
 </nav>
 
-<section>
-  <p>Signed in as [username]</p>
-  <%= link_to 'login/logout' %>
+<section class="align-right">
+  <% if logged_in? %>
+    <small><em>Logged in as <%= current_user.name %></em></small>
+    <br/>
+    <%= link_to 'Log out', logout_path %>
+  <% else %> 
+    <%= link_to 'Log in', login_path %><span></span>  
+    <%= link_to 'Sign up', new_user_path, class: "btn" %>
+  <% end %>
 </section>
