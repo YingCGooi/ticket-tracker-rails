@@ -3,12 +3,14 @@
   <td>[assignee]</td>
   <td><%= ticket.status.titleize %></td>
   <td class="tags"><%= tag_names(ticket) %> </td>
-  <td>
-    <%= link_to edit_ticket_path(ticket) do %>
-      <%= image_tag('edit-icon') %>
-    <% end %>
-    <%= link_to ticket_path(ticket), method: :delete do %>
-      <%= image_tag('trash-icon') %>
-    <% end %>  
-  </td>
+  <% if logged_in? %>
+    <td>
+      <%= link_to edit_ticket_path(ticket) do %>
+        <%= image_tag('edit-icon') %>
+      <% end %>
+      <%= link_to ticket_path(ticket), method: :delete do %>
+        <%= image_tag('trash-icon') %>
+      <% end %>  
+    </td>
+  <% end %>  
 </tr>

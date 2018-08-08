@@ -1,6 +1,7 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update]
-  before_action :set_options, only: [:new, :create, :edit]
+  before_action :set_options, only: [:new, :create, :edit, :update]
+  before_action :require_user, except: [:show, :index]
 
   def index
     @project_id = params[:project]

@@ -10,6 +10,7 @@ body {
 header {
   padding: 30px;
   background: #EEE;
+  border-bottom: 1px solid #CCC;
 }
 
 a {
@@ -75,8 +76,14 @@ main section {
   border-radius: 5px;  
 }
 
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .success,
 .error {
+  font-size: 14px;
   padding: 10px 30px;
   color: #2F5833;  
   background-color: #CBFFD0;
@@ -129,4 +136,8 @@ header,
 
 .align-right {
   text-align: right;
+}
+
+.disabled {
+  display: none;
 }

@@ -1,15 +1,15 @@
-<header>
+<div class="flex">
   <h1>Projects</h1>
-  <%= link_to '+ New Project', new_project_path %>
-</header>
+  <%= link_to '+ New Project', new_project_path, class: disable_if_logged_out %>
+</div>
 
-<section class="well">
+<section class="well no-padding">
   <table>
     <thead>
       <tr>
         <th>Name</th>
         <th>Open Tickets</th>
-        <th>Total Tickets</th>
+        <th class="no-wrap">Total Tickets</th>
       </tr>
     </thead>
     <tbody>

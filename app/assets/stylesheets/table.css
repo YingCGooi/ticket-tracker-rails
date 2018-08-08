@@ -15,7 +15,12 @@ th {
 
 th:first-child, 
 td:first-child {
-  padding-left: 15px;
+  padding-left: 20px;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 10px;
 }
 
 th:not(:first-child),
@@ -59,4 +64,8 @@ td a {
 
 .info dd {
   margin: 10px 0;
+}
+
+.no-wrap {
+  white-space: nowrap;
 }

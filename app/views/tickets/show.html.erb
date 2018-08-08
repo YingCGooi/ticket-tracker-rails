@@ -1,16 +1,20 @@
 <article class="well no-background">
   <div class="flex">
     <h1><%= @ticket.name %></h1>
-    <%= link_to 'Edit', edit_ticket_path(@ticket) %>
+    <%= link_to 'Edit', edit_ticket_path(@ticket), class: disable_if_logged_out %>
     <span></span>
-    <%= link_to 'Delete', ticket_path(@ticket), method: :delete %>    
+    <%= link_to 'Delete', ticket_path(@ticket), method: :delete, class: disable_if_logged_out %>
   </div>
+
   <hr/>  
+
   <p><%= @ticket.body %></p>
   <% if @ticket.tags.present? %>    
     <small><strong>Tags: </strong><%= tag_names(@ticket) %></small>
   <% end %>
+
   <hr/>
+  
   <section class="flex info">
     <dl>
       <dt>Status</dt>

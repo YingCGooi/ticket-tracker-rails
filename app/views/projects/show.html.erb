@@ -1,9 +1,9 @@
-<header>
+<div class="flex">
   <h1><%= @project.name %></h1>
-    <%= link_to 'Edit', edit_project_path(@project) %>
+    <%= link_to 'Edit', edit_project_path(@project), class: disable_if_logged_out %>
     <span></span>
-    <%= link_to 'Delete', project_path(@project), method: :delete %>
-</header>
+    <%= link_to 'Delete', project_path(@project), method: :delete, class: disable_if_logged_out %>
+</div>
 <p>
   <%= @project.description %>
 </p>
