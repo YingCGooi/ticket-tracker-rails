@@ -6,10 +6,10 @@
 
     <nav>
       <% if logged_in? && same_as_current_user?(comment.user) %>
-        <%= link_to edit_comment_path(ticket) do %>
+        <%= link_to edit_ticket_comment_path(ticket, comment) do %>
           <%= image_tag('edit-icon') %>
         <% end %>
-        <%= link_to comment_path(comment), method: :delete do %>
+        <%= link_to ticket_comment_path(ticket, comment), method: :delete do %>
           <%= image_tag('trash-icon') %>
         <% end %>
       <% end %>

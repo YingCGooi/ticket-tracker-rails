@@ -3,7 +3,7 @@ class Ticket < ActiveRecord::Base
   belongs_to :user
   has_many :ticket_tags, dependent: :destroy
   has_many :tags, through: :ticket_tags
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   @@tags = %w[new blocked in_progress fixed]  
 
