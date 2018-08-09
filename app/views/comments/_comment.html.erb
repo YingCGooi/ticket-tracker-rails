@@ -1,0 +1,23 @@
+<% ticket = comment.ticket %>
+
+<li class="well white-background">
+  <div class="flex">
+    <p><%= comment.body %></p>
+
+    <nav>
+      <% if logged_in? && same_as_current_user?(comment.user) %>
+        <%= link_to edit_comment_path(ticket) do %>
+          <%= image_tag('edit-icon') %>
+        <% end %>
+        <%= link_to comment_path(comment), method: :delete do %>
+          <%= image_tag('trash-icon') %>
+        <% end %>
+      <% end %>
+    </nav>
+  </div>
+  
+  <small>
+    posted by <%= comment.user.name %>
+    <%= time_ago_in_words(comment.created_at) %> ago
+  </small>
+</li>

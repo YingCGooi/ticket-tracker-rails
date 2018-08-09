@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update]
-  before_action :set_options, only: [:new, :create, :edit, :update]
+  before_action :set_options, only: [:new, :create, :edit, :update, :show]
   before_action :require_user, except: [:show, :index]
 
   def index
@@ -16,11 +16,13 @@ class TicketsController < ApplicationController
   end
 
   def show
-    # @comment = Comment.new
+    @comments = Comment.where(ticket_id: params[:id])
+    @comment = Comment.new
   end
 
   def create
     @ticket = Ticket.new(ticket_params)
+    @ticket.user = current_user
 
     if @ticket.save
       flash[:notice] = "Your ticket \"#{@ticket.name}\" was created!"
@@ -43,7 +45,7 @@ class TicketsController < ApplicationController
   end
 
   def destroy
-    @ticket = Ticket.where(id: params[:id]).first
+    @ticket = Ticket.find_by(id: params[:id])
     if @ticket.blank?
       flash[:alert] = "Cannot perform delete."
       return redirect_to tickets_path
@@ -65,6 +67,6 @@ class TicketsController < ApplicationController
   end
 
   def ticket_params
-    params.require(:ticket).permit(:name, :body, :status, :project_id, tag_ids: [])
+    params.require(:ticket).permit(:name, :body, :status, :project_id, :assignee_id, tag_ids: [])
   end
 end

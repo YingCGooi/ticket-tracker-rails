@@ -1,6 +1,6 @@
 <tr>
   <td><%= link_to ticket.name, ticket_path(ticket) %></td>
-  <td>[assignee]</td>
+  <td><%= assignee_name(ticket) %></td>
   <td><%= ticket.status.titleize %></td>
   <td class="tags"><%= tag_names(ticket) %> </td>
   <% if logged_in? %>
@@ -10,7 +10,7 @@
       <% end %>
       <%= link_to ticket_path(ticket), method: :delete do %>
         <%= image_tag('trash-icon') %>
-      <% end %>  
+      <% end %>
     </td>
   <% end %>  
 </tr>

@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'  
 
   resources :projects
+
   resources :tickets do
-    post :comment, on: :collection
-    post :comment, on: :member
-    delete :comment, on: :member
+    member do
+      resources :comments, only: [:create, :edit, :update, :destroy]
+    end
   end
 
   resources :users, only: [:new, :create]

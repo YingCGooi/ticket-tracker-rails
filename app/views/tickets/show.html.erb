@@ -6,12 +6,13 @@
     <%= link_to 'Delete', ticket_path(@ticket), method: :delete, class: disable_if_logged_out %>
   </div>
 
+  <% if @ticket.tags.present? %>    
+    <small><%= tag_names(@ticket) %></small>
+  <% end %>  
+
   <hr/>  
 
   <p><%= @ticket.body %></p>
-  <% if @ticket.tags.present? %>    
-    <small><strong>Tags: </strong><%= tag_names(@ticket) %></small>
-  <% end %>
 
   <hr/>
   
@@ -23,22 +24,30 @@
 
     <dl>
       <dt>Creator</dt>
-      <dd>[user]</dd>
+      <dd><%= @ticket.user.name %></dd>
     </dl>
 
     <dl>
       <dt>Assignee</dt>
-      <dd>[user]</dd>
+      <dd><%= assignee_name(@ticket) %></dd>
     </dl>
   </section>
 </article>
 
 <br/>
 
-<article class="well">
+<article class="well no-background">
   <h2>Comments</h2>
-
-  <p>Comment body</p>
+  <br />
+  <% if @comments.present? %>
+    <%= render @comments %>
+  <% else %>
+    <small>No comments to display. Please create one below.</small>
+  <% end %>
 </article>
 
-<% render 'comments/form', comment: @comment %>
+<% if logged_in? %>
+  <section class="well">
+    <%= render 'comments/form' %>
+  </section>
+<% end %>

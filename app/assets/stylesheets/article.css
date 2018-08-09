@@ -1,0 +1,23 @@
+article li {
+  list-style: none;
+}
+
+article li:not(:first-of-type) {
+  margin-top: 8px;
+}
+
+article p:first-child {
+  margin-top: 0;
+}
+
+p {
+  font-size: 20px;
+}
+
+small {
+  font-size: 16px;
+}
+
+article small {
+  font-style: italic;
+}
