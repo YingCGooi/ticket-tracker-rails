@@ -1,5 +1,13 @@
-<nav>
-  <h2>Ticket Tracker</h2>  
+<nav>  
+  <h2><%= link_to 'Ticket Tracker', root_path %></h2>
+  <div class="flex links">
+    <%= link_to 'Projects', projects_path %><span></span>
+    <%= link_to 'Tickets', tickets_path %><span></span>
+    <%= link_to 'Tags' %>
+  </div>
+</nav>
+
+<nav class="flex links">
   <%= link_to 'Projects', projects_path %><span></span>
   <%= link_to 'Tickets', tickets_path %><span></span>
   <%= link_to 'Tags' %>
@@ -8,7 +16,8 @@
 <section class="align-right">
   <% if logged_in? %>
     <small><em>Logged in as <%= current_user.name %></em></small>
-    <br/>
+    <br class="mobile"/>
+    <span></span>
     <%= link_to 'Log out', logout_path %>
   <% else %> 
     <%= link_to 'Log in', login_path %><span></span>  

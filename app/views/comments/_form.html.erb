@@ -1,6 +1,10 @@
 <%= form_for [@ticket, @comment] do |f| %>
   <dl>
-    <dt><%= f.label 'body', 'Add a comment' %></dt>
+    <dt>
+      <% if show_action? %>
+        <%= f.label 'body', 'Add a comment' %>
+      <% end %>
+    </dt>
     <dd><%= f.text_area 'body', rows: 8 %></dd>
 
     <dt><%= label_tag 'status' %></dt>

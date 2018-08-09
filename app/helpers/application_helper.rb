@@ -1,6 +1,8 @@
 module ApplicationHelper
   def tag_names(ticket_obj)
-    ticket_obj.tags.map(&:name).join(', ')
+    tags = ticket_obj.tags
+    return '-' if tags.blank?
+    tags.map(&:name).join(', ')
   end
 
   def disable_if_logged_out

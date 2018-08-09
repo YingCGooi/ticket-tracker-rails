@@ -13,6 +13,10 @@ header {
   border-bottom: 1px solid #CCC;
 }
 
+header > nav.links {
+  display: none;
+}
+
 a {
   font-size: 18px;  
   display: inline-block;
@@ -56,8 +60,15 @@ h2 {
   font-size: 24px;
 }
 
+h2 > a {
+  font-size: 24px;
+  color: inherit;
+}
+
 main {
+  margin: 0 auto;
   padding: 25px;
+  max-width: 800px;
 }
 
 main p {
@@ -132,4 +143,31 @@ header,
 
 .disabled {
   display: none;
+}
+
+@media (min-width: 800px) {
+  header > nav a {
+    font-size: 22px;
+    margin-top: 0;
+  }
+  
+  nav h2 > a {
+    font-size: 28px;
+  }  
+
+  header > nav div.links {
+    display: none;
+  }
+
+  header > nav.links {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .links span {
+    width: 25px;
+  }
 }

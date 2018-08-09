@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   before_action :require_user
 
   def create
-    binding.pry
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
 
