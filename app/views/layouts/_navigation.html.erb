@@ -1,16 +1,16 @@
 <nav>  
   <h2><%= link_to 'Ticket Tracker', root_path %></h2>
-  <div class="flex links">
+  <div class="flex links mobile">
     <%= link_to 'Projects', projects_path %><span></span>
     <%= link_to 'Tickets', tickets_path %><span></span>
-    <%= link_to 'Tags' %>
+    <%= link_to 'Tags', tags_path %>
   </div>
 </nav>
 
 <nav class="flex links">
   <%= link_to 'Projects', projects_path %><span></span>
   <%= link_to 'Tickets', tickets_path %><span></span>
-  <%= link_to 'Tags' %>
+  <%= link_to 'Tags', tags_path %>
 </nav>
 
 <section class="align-right">

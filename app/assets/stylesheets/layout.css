@@ -28,16 +28,6 @@ a:hover {
   color: #2F7AFF;
 }
 
-a > img {
-  opacity: 0.3;
-  height: 20px;
-  width: 20px;
-}
-
-a > img:hover {
-  opacity: 0.8;
-}
-
 nav a {
   margin-top: 10px;
   font-size: 20px;
@@ -84,12 +74,11 @@ main section {
   padding: 25px;
   background-color: #FAFAFA;
   border: 1px solid #CCC;
-  border-radius: 5px;  
+  border-radius: 5px;
 }
 
 .no-padding {
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 }
 
 .success,
@@ -154,10 +143,6 @@ header,
   nav h2 > a {
     font-size: 28px;
   }  
-
-  header > nav div.links {
-    display: none;
-  }
 
   header > nav.links {
     display: block;

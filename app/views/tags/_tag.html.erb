@@ -1,0 +1,18 @@
+<tr>
+  <td><%= tag.name %></td>
+  <td>
+    <% if Tag.ticket_count[tag.id].present? %>
+      <%= link_to Tag.ticket_count[tag.id], tickets_path(tag: tag.id) %>
+    <% else %>
+      0
+    <% end %>
+  </td>
+  <td class="actions">
+    <%= link_to edit_tag_path(tag) do %>
+      <%= image_tag('edit-icon') %>
+    <% end %>
+    <%= link_to tag_path(tag), method: :delete do %>
+      <%= image_tag('trash-icon') %>
+    <% end %>
+  </td>
+</tr>
