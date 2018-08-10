@@ -24,7 +24,10 @@ class Ticket < ActiveRecord::Base
   def self.filter_by(query)
     query.delete(:project_id) if query[:project_id].blank?
     query.delete(:status) if query[:status].blank?
+    tag_id = query.delete(:tag_id)
 
-    self.all.where(query)
+    result = self.where(query)
+    result = result.joins(:tags).where("tags.id": tag_id) if tag_id.present?
+    result.order(:name)
   end
 end

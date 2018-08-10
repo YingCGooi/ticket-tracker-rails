@@ -1,6 +1,6 @@
 <div class="flex">
   <h1>All Tags</h1>
-  <%= link_to '+ New Tag', new_tag_path %>
+  <%= link_to '+ New Tag', new_tag_path, class: disable_if_logged_out %>
 </div>
 
 <section class="well no-padding">

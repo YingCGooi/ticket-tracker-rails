@@ -1,6 +1,8 @@
 class TagsController < ApplicationController
+  before_action :require_user, except: [:index]
+
   def index
-    @tags = Tag.all
+    @tags = Tag.order(:name)
   end
 
   def new

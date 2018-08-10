@@ -6,8 +6,9 @@ class TicketsController < ApplicationController
   def index
     @project_id = params[:project]
     @status = params[:status]
+    @tag_id = params[:tag]
     @tickets = Ticket.filter_by(project_id: @project_id,
-      status: @status)
+      status: @status, tag_id: @tag_id)
     @statuses = Ticket.statuses
   end
 

@@ -20,9 +20,9 @@
     </dl><!--
 
     --><dl>
-      <dt><%= label_tag 'tagged' %></dt>
-      <dd><%= select_tag 'tagged',
-        options_for_select([]),
+      <dt><%= label_tag 'tag' %></dt>
+      <dd><%= select_tag 'tag',
+        options_from_collection_for_select(Tag.all, 'id', 'name', @tag_id),
         include_blank: "Any/None"
       %></dd>
     </dl>

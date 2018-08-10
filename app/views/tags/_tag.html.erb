@@ -8,10 +8,10 @@
     <% end %>
   </td>
   <td class="actions">
-    <%= link_to edit_tag_path(tag) do %>
+    <%= link_to edit_tag_path(tag), class: disable_if_logged_out do %>
       <%= image_tag('edit-icon') %>
     <% end %>
-    <%= link_to tag_path(tag), method: :delete do %>
+    <%= link_to tag_path(tag), method: :delete, class: disable_if_logged_out do %>
       <%= image_tag('trash-icon') %>
     <% end %>
   </td>
