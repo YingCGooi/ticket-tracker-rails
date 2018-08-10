@@ -8,10 +8,11 @@
   <%= @project.description %>
 </p>
 
-<section class="well">
-  <% if @tickets.present? %>
-    <h2>Tickets</h2>
+<hr/>
+<h2>Tickets</h2>
 
+<section class="well no-padding">
+  <% if @tickets.present? %>
     <table>
       <thead>
         <tr>
