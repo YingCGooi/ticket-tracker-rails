@@ -5,8 +5,8 @@
       <dd><%= project.description %></dd>
     </dl>
   </td>
-  <td><%= Project.open_tickets_count[project.id] %></td>
+  <td><%= Project.open_tickets_count[project.id] || 0 %></td>
 <!--   SELECT projects.name, count(tickets.id) FROM projects INNER JOIN tickets ON projects.id = tickets.project_id WHERE tickets.status != 'fixed' GROUP BY projects.name;
  -->
-  <td><%= Project.total_tickets_count[project.id] %></td>  
+  <td><%= Project.total_tickets_count[project.id] || 0 %></td>  
 </tr>

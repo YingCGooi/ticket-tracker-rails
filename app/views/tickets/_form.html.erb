@@ -1,4 +1,6 @@
 <section class="well">
+  <%= render 'shared/errors', obj: @ticket %>
+    
   <%= form_for @ticket do |f| %>
     <dl>
       <dt><%= f.label 'project_id', 'Assign to project:' %></dt>

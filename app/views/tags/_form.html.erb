@@ -1,0 +1,10 @@
+<%= render 'shared/errors', obj: @tag %>
+
+<%= form_for @tag do |f| %>
+  <dl>
+    <dt><%= f.label 'name' %></dt>
+    <dd><%= f.text_field 'name' %></dd>
+  </dl>
+
+  <%= f.submit %>
+<% end %>
