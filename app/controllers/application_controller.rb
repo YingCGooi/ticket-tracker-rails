@@ -25,4 +25,26 @@ class ApplicationController < ActionController::Base
   def show_action?
     params[:action] == 'show'
   end
+
+  def destroy_item(model, path, message = nil)
+    @obj = model.find_by(id: params[:id])
+
+    if @obj.blank?
+      flash[:alert] = "Cannot perform delete."
+      return redirect_to path
+    end
+
+    @obj.destroy
+    flash[:notice] = message || "The #{model.name.downcase} \"#{@obj.name}\" has been deleted."
+    redirect_to path
+  end
+
+  def update_item(obj, params, path)
+    if obj.update(params)
+      flash[:notice] = "Your #{obj.class.name.downcase} was successfully updated."
+      redirect_to path
+    else
+      render :edit
+    end
+  end
 end
