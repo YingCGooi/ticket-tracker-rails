@@ -8,38 +8,32 @@ class TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.new(name_params)
+    @tag = Tag.new(tag_params)
 
     if @tag.save
       flash[:notice] = "A new tag has been created!"
       redirect_to tags_path
     else
-      redirect_to new_tag_path
+      render :new
     end    
   end
 
   def edit
+    @tag = Tag.find(params[:id])
   end
 
   def update
+    @tag = Tag.find(params[:id])
+    update_item @tag, tag_params, tags_path
   end
 
   def destroy
-    @tag = Tag.find_by(id: params[:id])
-
-    if @tag.blank?
-      flash[:alert] = "Cannot perform delete."
-      return redirect_to tags_path
-    end
-
-    @tag.destroy
-    flash[:notice] = "The tag \"#{@tag.name}\" has been deleted."
-    redirect_to tags_path
+    destroy_item Tag, tags_path
   end
 
   private
 
-  def name_params
-    name: params[:tag][:name]
+  def tag_params
+    params.require(:tag).permit(:name)
   end
 end

@@ -35,16 +35,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find_by(id: params[:id])
-
-    if @comment.blank?
-      flash[:alert] = "Cannot perform delete."
-      return redirect_back fallback_location: root_path
-    end
-
-    @comment.destroy
-    flash[:notice] = "Your comment has been deleted."
-    redirect_to ticket_path(@comment.ticket)
+    destroy_item Comment, 
+      ticket_path(params[:ticket_id]), 
+      "Your comment has been deleted."
   end
 
   private

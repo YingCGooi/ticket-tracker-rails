@@ -29,22 +29,11 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update(project_params)
-      flash[:notice] = "Your project was updated."
-      redirect_to project_path(@project)
-    else
-      render :edit
-    end
+    update_item @project, project_params, project_path(@project)
   end
 
   def destroy
-    if @project.destroy
-      flash[:notice] = "The project \"#{@project.name}\" has been deleted."
-      redirect_to projects_path
-    else
-      flash[:alert] = "The project \"#{@project.name}\" cannot be deleted."
-      redirect_to :back
-    end
+    destroy_item Project, projects_path
   end
 
   private

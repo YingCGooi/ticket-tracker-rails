@@ -36,24 +36,11 @@ class TicketsController < ApplicationController
   end
 
   def update
-    if @ticket.update(ticket_params)
-      flash[:notice] = "Your ticket was successfully updated."
-      redirect_to ticket_path(@ticket)
-    else
-      render :edit
-    end
+    update_item @ticket, ticket_params, ticket_path(@ticket)
   end
 
   def destroy
-    @ticket = Ticket.find_by(id: params[:id])
-    if @ticket.blank?
-      flash[:alert] = "Cannot perform delete."
-      return redirect_to tickets_path
-    end
-
-    @ticket.destroy
-    flash[:notice] = "The ticket \"#{@ticket.name}\" has been deleted."
-    redirect_to tickets_path
+    destroy_item Ticket, tickets_path
   end
 
   private
