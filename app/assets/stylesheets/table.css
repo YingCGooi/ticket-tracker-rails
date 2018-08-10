@@ -29,7 +29,7 @@ td:not(:first-child) {
 }
 
 td {
-  padding: 10px 5px;
+  padding: 15px 5px;
   border-top: 1px solid #DDD;
   vertical-align: middle;
 }
