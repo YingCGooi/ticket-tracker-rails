@@ -10,9 +10,8 @@
 
 <hr/>
 <h2>Tickets</h2>
-
+<% if @tickets.present? %>
 <section class="well no-padding">
-  <% if @tickets.present? %>
     <table>
       <thead>
         <tr>
@@ -27,11 +26,13 @@
         <%= render @tickets %>
       </tbody>
     </table>
-  <% else %>
-    <p>
-      <em>There are no associated tickets to display. 
-      Please
-      <%= link_to 'create one here', new_ticket_path(project_id: @project.id) %>.</em>
+  </section>
+<% else %>
+<section class="well">
+  <p>
+    <em>There are no associated tickets to display. 
+    Please
+    <%= link_to 'create one here', new_ticket_path(project_id: @project.id) %>.</em>
   </p>
-  <% end %>
 </section>
+<% end %>
