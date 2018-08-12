@@ -146,6 +146,10 @@ header,
     padding: 0 25px;
   }
 
+  section > a:first-of-type {
+    margin-bottom: 10px;
+  }
+
   select.width-1-3 {
     width: 100%;
   }
