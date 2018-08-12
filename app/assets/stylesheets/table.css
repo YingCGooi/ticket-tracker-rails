@@ -87,3 +87,30 @@ a > img {
 a > img:hover {
   opacity: 1;
 }
+
+@media (max-width: 480px) {
+  th:first-child, 
+  td:first-child {
+    padding-left: 8px;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 0;
+  }
+
+  th {
+    font-size: 16px;
+  }
+
+  tbody td {
+    font-size: 18px;
+  }
+
+  .limit-width a,
+  .limit-width td {
+    max-width: 100px;
+    overflow-wrap: break-word;    
+    font-size: 18px;  
+  }
+}

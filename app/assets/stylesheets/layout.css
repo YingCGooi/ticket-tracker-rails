@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  padding: 30px;
+  padding: 20px;
   background: #EEE;
   border-bottom: 1px solid #CCC;
 }
@@ -28,8 +28,11 @@ a:hover {
   color: #2F7AFF;
 }
 
-nav a {
+div.links {
   margin-top: 10px;
+}
+
+nav a {
   font-size: 20px;
   font-weight: bold;
 }
@@ -149,6 +152,10 @@ header,
 }
 
 @media (min-width: 800px) {
+  header {
+    padding: 30px;
+  }
+
   header > nav a {
     font-size: 22px;
     margin-top: 0;
