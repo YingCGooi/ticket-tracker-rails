@@ -1,5 +1,5 @@
 ### Ticket Tracker
-
+![demo](https://i.imgur.com/cWeuJYX.png)
 Ruby version: 2.3.1
 
 #### Installation
