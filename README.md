@@ -1,6 +1,8 @@
 ### Ticket Tracker
-![demo](https://i.imgur.com/cWeuJYX.png)
+
 Ruby version: 2.3.1
+
+![demo](https://i.imgur.com/cLPdXWe.png)
 
 #### Installation
 `cd` to the project directory and run `bundle install` to install dependencies (note: you need to have Ruby 2.3.1 installed)
